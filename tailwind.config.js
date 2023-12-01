@@ -22,5 +22,5 @@ module.exports = {
     },
   ],
   darkMode: "class",
-  plugins: [nextui(), require('tailwind-highlightjs')],
+  plugins: [nextui(), require("tailwind-highlightjs")],
 };
