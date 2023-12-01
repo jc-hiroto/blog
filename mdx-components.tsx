@@ -52,7 +52,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           className="rounded-lg unselectable"
           alt={props?.alt ?? ""}
         />
-        <p className="text-sm text-gray-400 text-center mt-2">
+        <p className="text-sm font-mono text-gray-400 text-center mt-2">
           {props?.alt ?? ""}
         </p>
       </div>
