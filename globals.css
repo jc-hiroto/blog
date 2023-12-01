@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+pre code {
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 0 0 0 !important;
+    border-radius: 0 !important;
+}
+
+ul ul {
+    margin: 0.25rem 0 0 1.5rem !important;
+    list-style-type: circle !important;
+}
+
+ul ul ul {
+    margin: 0.25rem 0 0 1.5rem !important;
+    list-style-type: square !important;
+}
+
+ol ol {
+    margin: 0.25rem 0 0 1.5rem !important;
+    list-style-type: lower-alpha !important;
+}
+
+ol ol ol {
+    margin: 0.25rem 0 0 1.5rem !important;
+    list-style-type: lower-roman !important;
+}
+
+.unselectable {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }

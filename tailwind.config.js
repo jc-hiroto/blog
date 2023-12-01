@@ -2,7 +2,6 @@ import { nextui } from "@nextui-org/react";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  important: true,
   content: [
     "./mdx-components.tsx",
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
@@ -12,8 +11,16 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    hljs: {
+      theme: "github-dark",
+    },
     extend: {},
   },
+  safelist: [
+    {
+      pattern: /hljs+/,
+    },
+  ],
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(), require('tailwind-highlightjs')],
 };

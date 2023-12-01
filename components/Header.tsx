@@ -7,7 +7,7 @@ function Header() {
       <Link href="/" className="font-mono text-xl font-semibold text-gray-400">
         blog.
       </Link>
-      <hr className="w-[80%] border-gray-500" />
+      <hr className="w-[80%] mx-4 border-gray-600" />
       <Link
         href="https://jchiroto.dev"
         className="font-mono text-sm text-gray-400"

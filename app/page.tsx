@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "components/Header";
+import Footer from "components/Footer";
 import { FiPackage } from "react-icons/fi";
 
 export default function Page() {
