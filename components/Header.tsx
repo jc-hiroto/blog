@@ -1,34 +1,28 @@
-import { Link } from "@chakra-ui/next-js";
-import { Divider, Flex, HStack, Icon, Text } from "@chakra-ui/react";
+import { Link } from "@nextui-org/react";
 import { FiExternalLink } from "react-icons/fi";
 
 function Header() {
   return (
-    <Flex w="100%" h="14" px="8" py="4" alignItems="center">
+    <div className="w-full h-14 px-8 flex flex-row items-center justify-between">
       <Link
         href="/"
-        fontSize="xl"
-        fontWeight="600"
-        fontFamily={"mono"}
-        color={"gray.400"}
+        className="font-mono text-xl font-semibold text-gray-400"
       >
         blog.
       </Link>
-      <Divider mx="12" borderColor={"gray.500"} />
+      <hr
+        className="w-[80%] border-gray-500" />
       <Link
         href="https://jchiroto.dev"
-        ml="auto"
-        fontSize={"sm"}
-        color="gray.400"
-        fontFamily={"mono"}
+        className="font-mono text-sm text-gray-400"
         isExternal
       >
-        <HStack spacing={2}>
-          <Text>jchiroto.dev</Text>
-          <Icon as={FiExternalLink} />
-        </HStack>
+        <div className="flex flex-row align-middle">
+          <p className="flex flex-row">jchiroto.dev </p>
+          <FiExternalLink className="my-auto ml-2" />
+        </div>
       </Link>
-    </Flex>
+    </div>
   );
 }
 

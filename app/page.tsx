@@ -1,6 +1,3 @@
-"use client";
-
-import { Flex, HStack, Icon, Text } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { FiPackage } from "react-icons/fi";
@@ -8,35 +5,15 @@ import { FiPackage } from "react-icons/fi";
 export default function Page() {
   return (
     <>
-      <Flex w="100%" flexDirection={"column"}>
+      <div className="w-full flex-col">
         <Header />
-        <Flex
-          w="100%"
-          minH="90vh"
-          px="8"
-          pt="4"
-          flexDirection={"column"}
-          justifyContent={"center"}
-          alignItems={"center"}
-        >
-          <Icon
-            as={FiPackage}
-            boxSize={300}
-            position={"absolute"}
-            color="gray.900"
-            zIndex={-1}
-          />
-          <Text
-            fontSize="6xl"
-            fontWeight="600"
-            fontFamily={"mono"}
-            color={"gray.400"}
-          >
-            Unpacking stuff...
-          </Text>
-        </Flex>
-        <Footer />
-      </Flex>
+          <div className="w-full min-h-[90vh] px-8 pt-4 flex flex-col items-center justify-center">
+            <FiPackage className="text-gray-800 z-0 -mb-[12rem]" size="20rem"/>
+            <p className="font-mono text-6xl font-bold text-gray-400 z-10">
+              Unpacking stuff...
+            </p>
+          </div>
+      </div>
     </>
   );
 }
