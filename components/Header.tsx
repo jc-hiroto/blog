@@ -4,14 +4,10 @@ import { FiExternalLink } from "react-icons/fi";
 function Header() {
   return (
     <div className="w-full h-14 px-8 flex flex-row items-center justify-between">
-      <Link
-        href="/"
-        className="font-mono text-xl font-semibold text-gray-400"
-      >
+      <Link href="/" className="font-mono text-xl font-semibold text-gray-400">
         blog.
       </Link>
-      <hr
-        className="w-[80%] border-gray-500" />
+      <hr className="w-[80%] border-gray-500" />
       <Link
         href="https://jchiroto.dev"
         className="font-mono text-sm text-gray-400"
