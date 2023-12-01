@@ -1,42 +1,27 @@
 import type { MDXComponents } from "mdx/types";
-import Heading from "./components/mdx/Heading";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <Heading level={"h1"} size="5xl" weight="700">
-        {children}
-      </Heading>
+      <p className="text-5xl font-bold text-white">{children}</p>
     ),
     h2: ({ children }) => (
-      <Heading level={"h2"} size="4xl" weight="700">
-        {children}
-      </Heading>
+      <p className="text-4xl font-bold text-white">{children}</p>
     ),
     h3: ({ children }) => (
-      <Heading level={"h3"} size="3xl" weight="700">
-        {children}
-      </Heading>
+      <p className="text-3xl font-bold text-white">{children}</p>
     ),
     h4: ({ children }) => (
-      <Heading level={"h4"} size="2xl" weight="700">
-        {children}
-      </Heading>
+      <p className="text-2xl font-bold text-white">{children}</p>
     ),
     h5: ({ children }) => (
-      <Heading level={"h5"} size="xl" weight="700">
-        {children}
-      </Heading>
+      <p className="text-xl font-bold text-white">{children}</p>
     ),
     h6: ({ children }) => (
-      <Heading level={"h6"} size="lg" weight="700">
-        {children}
-      </Heading>
+      <p className="text-lg font-bold text-white">{children}</p>
     ),
     p: ({ children }) => (
-      <Heading level={"p"} size="md" weight="400" family="sans-serif">
-        {children}
-      </Heading>
+      <p className="text-md font-normal text-white">{children}</p>
     ),
     ...components,
   };
