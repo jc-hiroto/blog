@@ -9,7 +9,7 @@ function Footer() {
         Copyright © {new Date().getFullYear()} James Chang.
       </p>
       <div className="flex-grow" />
-      <div className="flex flex-row w-[60%] justify-center content-center">
+      <div className="sm:flex flex-row w-[60%] justify-center content-center hidden">
         <Link
           className="text-sm text-gray-400"
           href="https://blog.jchiroto.dev/"
@@ -22,7 +22,7 @@ function Footer() {
         </Link>
       </div>
       <div className="flex-grow" />
-      <div className="flex flex-row mr-4">
+      <div className="flex flex-row sm:mr-4 sm:mt-0 mt-2">
         <FiGitBranch className="my-auto mr-1 text-gray-500" />
         <p className="text-xs text-gray-500">{version}</p>
       </div>

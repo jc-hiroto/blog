@@ -3,12 +3,12 @@ import type { MDXComponents } from "mdx/types";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <p className="text-6xl font-bold text-gray-100 mt-5 mb-2 leading-[1.2]">
+      <p className="text-6xl font-bold text-gray-100 mt-5 mb-3 leading-[1.2]">
         {children}
       </p>
     ),
     h2: ({ children }) => (
-      <p className="text-4xl font-bold text-gray-100 mt-5 mb-2">{children}</p>
+      <p className="text-4xl font-bold text-gray-100 mt-4 mb-3">{children}</p>
     ),
     h3: ({ children }) => (
       <p className="text-3xl font-bold text-gray-100 mt-4 mb-2">{children}</p>
@@ -23,7 +23,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <p className="text-lg font-bold text-white mt-2 mb-1">{children}</p>
     ),
     p: ({ children }) => (
-      <p className="text-md font-normal text-gray-200 leading-loose">
+      <p className="text-md font-normal text-gray-300 leading-loose">
         {children}
       </p>
     ),
