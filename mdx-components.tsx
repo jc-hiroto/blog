@@ -1,3 +1,4 @@
+import { Link } from "@nextui-org/react";
 import type { MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -27,7 +28,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <p className="text-lg font-bold text-white mt-2 mb-1">{children}</p>
     ),
     p: ({ children }) => (
-      <p className="text-md sm:text-lg font-normal text-gray-300 leading-[1.75]">
+      <p className="text-md sm:text-lg font-normal text-gray-300 leading-[1.75] sm:leading-[1.75]">
         {children}
       </p>
     ),
@@ -60,6 +61,22 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           {props?.alt ?? ""}
         </p>
       </div>
+    ),
+    a: ({ children, ...props }) => (
+      <Link
+        href={props.href}
+        isExternal
+        showAnchorIcon
+        underline="active"
+        className="text-md font-normal text-indigo-500"
+      >
+        {children}
+      </Link>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="text-md font-semibold text-gray-500 border-l-4 border-indigo-800 pl-4 my-4">
+        {children}
+      </blockquote>
     ),
     ...components,
   };

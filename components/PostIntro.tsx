@@ -22,7 +22,7 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
             by {metadata.author}
           </p>
           <p className="text-sm sm:text-md font-mono text-gray-500 sm:ml-2">
-            {metadata.date.toDateString()}
+            on {metadata.date.toDateString()}
           </p>
         </div>
       </div>
@@ -31,8 +31,8 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
           {metadata.description}
         </p>
         <p className="text-sm sm:text-sm font-mono text-gray-500 mt-2 sm:mt-1">
-          {metadata.words} wds / approx.{" "}
-          {calcReadingTime(metadata.words, metadata.language)} minute(s)
+          costs you {" "}
+          {calcReadingTime(metadata.words, metadata.language)} min(s)
         </p>
       </div>
       <hr className="w-[100%] mx-auto border-gray-700 my-10" />
