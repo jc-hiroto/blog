@@ -30,7 +30,10 @@ ol ol ol {
 }
 
 .unselectable {
-  user-drag: none;
+  /* disable image dragging */
+  /* disable right click context menu */
+  -webkit-touch-callout: none;
+  pointer-events: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;

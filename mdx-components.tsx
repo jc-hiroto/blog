@@ -3,12 +3,16 @@ import type { MDXComponents } from "mdx/types";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <p className="text-6xl font-bold text-gray-100 mt-5 mb-3 leading-[1.2]">
-        {children}
-      </p>
+      <div className="flex flex-row justify-start items-center mt-8 mb-4">
+        <p className="sm:text-5xl text-4xl font-bold text-gray-100">{children}</p>
+        <hr className="ml-4 border-gray-700 flex-grow" />
+      </div>
     ),
     h2: ({ children }) => (
-      <p className="text-4xl font-bold text-gray-100 mt-4 mb-3">{children}</p>
+      <div className="flex flex-row justify-start items-center mt-6 mb-3">
+        <p className="sm:text-4xl text-3xl font-bold text-gray-100">{children}</p>
+        <hr className="ml-4 border-gray-800 flex-grow" />
+      </div>
     ),
     h3: ({ children }) => (
       <p className="text-3xl font-bold text-gray-100 mt-4 mb-2">{children}</p>
@@ -23,7 +27,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <p className="text-lg font-bold text-white mt-2 mb-1">{children}</p>
     ),
     p: ({ children }) => (
-      <p className="text-md font-normal text-gray-300 leading-loose">
+      <p className="text-md sm:text-lg font-normal text-gray-300 leading-[1.75]">
         {children}
       </p>
     ),

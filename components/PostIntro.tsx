@@ -8,7 +8,7 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
       <div className="w-full h-[30rem] ">
         <Image
           src={metadata.cover}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover unselectable"
           alt="cover"
         />
       </div>
