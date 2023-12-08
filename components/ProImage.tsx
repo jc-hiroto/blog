@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ProImageMetadata } from "types/metadata";
 
-function ProImage({ path, desc_zh, desc_en, reverse=false, camera, lens, film }: ProImageMetadata) {
+function ProImage({ path, title, desc_zh, desc_en, reverse=false, camera, lens, film }: ProImageMetadata) {
   return (
     <div className={`h-full flex ${reverse? "sm:flex-row-reverse":"sm:flex-row"} flex-col justify-center items-stretch mt-12 mb-6`}>
       <div className="sm:w-[60%] h-full">
@@ -15,8 +15,9 @@ function ProImage({ path, desc_zh, desc_en, reverse=false, camera, lens, film }:
       </div>
       <div className="sm:w-[30%] h-auto sm:mx-[5%] mx-2 flex flex-col sm:py-4 pt-4 sm:justify-between">
         <div className="flex flex-col space-y-2 sm:text-lg text-sm text-gray-400">
+          <p className="font-bold sm:text-2xl text-lg text-gray-200">{title}</p>
           {(desc_zh) && <p>{desc_zh}</p>}
-          <p>{desc_en}</p>
+          {(desc_en) && <p>{desc_en}</p>}
         </div>
         <div className="flex flex-row sm:space-x-4 pt-4">
           <div className="border-l-1 border-gray-500 h-full sm:flex hidden" />

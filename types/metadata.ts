@@ -19,6 +19,7 @@ export interface PostMetadata {
 
 export interface ProImageMetadata {
   path: string;
+  title: string;
   desc_zh: string;
   desc_en: string;
   reverse?: boolean;

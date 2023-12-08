@@ -43,7 +43,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </ol>
     ),
     code: ({ children }) => (
-      <code className="text-md font-mono text-white bg-gray-700 px-2 py-[0.1rem] rounded-md">
+      <code className="text-md font-mono text-teal-200 bg-gray-700 px-2 py-[0.1rem] rounded-md">
         {children}
       </code>
     ),
@@ -68,13 +68,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         isExternal
         showAnchorIcon
         underline="active"
-        className="text-md font-normal text-indigo-500"
+        className="text-md font-normal text-teal-400"
       >
         {children}
       </Link>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="text-md font-semibold text-gray-500 border-l-4 border-indigo-800 pl-4 my-4">
+      <blockquote className="text-md font-semibold text-gray-500 border-l-4 border-teal-400 pl-4 my-4">
         {children}
       </blockquote>
     ),
