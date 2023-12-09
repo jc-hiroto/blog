@@ -1,11 +1,9 @@
 import { Link } from "@nextui-org/react"
 import Image from "next/image"
 
-function AboutAuthor({lang="en"}: {lang: string}) {
-    const aboutAuthor = lang === "zh" ? "關於作者" : "About Author"
+function AboutAuthor() {
     const about_zh = "在灣區奮鬥的臺灣菜鳥工程師，平時除了寫扣也愛到處走走拍底片。這邊主要會聊一些關於軟體工程師的主題，同時也是我分享相片作品的地方。"
     const about_en = "A Taiwanese software engineer in the Bay Area. I love writing random code and film photography. This blog is mainly about software engineering and my photography works."
-    const about = lang === "zh" ? about_zh : about_en
     return (
         <div className="flex flex-col mt-40 mb-10 items-center">
           <div className="w-full flex flex-row justify-center items-center mb-4">

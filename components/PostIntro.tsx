@@ -1,15 +1,19 @@
 import { PostMetadata } from "types/metadata";
 import Image from "next/image";
 import { calcReadingTime } from "utils";
+import path from "path";
 
 function PostIntro({ metadata }: { metadata: PostMetadata }) {
   return (
     <div className=" flex flex-col justify-center items-start mt-2 sm:mt-10">
-      <div className="w-full h-[30rem] ">
+      <div className="w-full h-[30rem] relative">
         <Image
-          src={metadata.cover}
+          src={path.join("/img", metadata.cover, "cover.png")}
           className="w-full h-full object-cover unselectable"
           alt="cover"
+          width={0}
+          height={0}
+          sizes="100vw"
         />
       </div>
       <div className="w-full flex flex-row justify-between items-center mt-8 flex-wrap">

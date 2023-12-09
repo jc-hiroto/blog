@@ -5,16 +5,16 @@ export enum PostLanguage {
   zh_tw = "zh_tw",
 }
 
-export interface PostMetadata {
+export type PostMetadata = {
   title: string;
   author: string;
   date: Date;
-  cover: StaticImageData;
+  cover: string;
   words: number;
   tags: string[];
   description: string;
   prefix: string;
-  language: PostLanguage;
+  language: string;
 }
 
 export interface ProImageMetadata {

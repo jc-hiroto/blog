@@ -8,8 +8,9 @@ function ProImage({ path, title, desc_zh, desc_en, reverse=false, camera, lens, 
         <Image
           src={path}
           className="w-full rounded-md unselectable"
-          width="0"
-          height="0"
+          width={0}
+          height={0}
+          sizes="100vw"
           alt="cover"
         />
       </div>

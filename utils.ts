@@ -1,12 +1,24 @@
 import { PostLanguage } from "types/metadata";
 
-const wpm = {
-  [PostLanguage.en]: 228,
-  [PostLanguage.zh_tw]: 158,
-};
 
-function calcReadingTime(wordCount: number, lang: PostLanguage): number {
-  return Math.ceil(wordCount / wpm[lang]);
+function getWpm(lang: string) {
+  const wpm = {
+    en: 228,
+    zh_tw: 158,
+  };
+
+  switch (lang) {
+    case "en":
+      return wpm.en;
+    case "zh_tw":
+      return wpm.zh_tw;
+    default:
+      return wpm.en;
+  }
+}
+
+function calcReadingTime(wordCount: number, lang: string): number {
+  return Math.ceil(wordCount / getWpm(lang));
 }
 
 export { calcReadingTime };

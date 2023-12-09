@@ -1,8 +1,9 @@
 import { Link } from "@nextui-org/react";
+import ProImage from "components/ProImage";
 import type { MDXComponents } from "mdx/types";
+import Image from "next/image";
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
-  return {
+export const mdxComponents: MDXComponents = {
     h1: ({ children }) => (
       <div className="flex flex-row justify-start items-center mt-8 mb-4">
         <p className="sm:text-5xl text-4xl font-bold text-gray-100">{children}</p>
@@ -52,10 +53,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     img: (props) => (
       <div className="flex flex-col justify-center my-10">
-        <img
-          {...props}
-          className="rounded-lg unselectable"
+        <Image
+          src={props.src as string}
+          className="w-full h-full rounded-lg unselectable"
           alt={props?.alt ?? ""}
+          width={0}
+          height={0}
+          sizes="100vw"
         />
         <p className="text-sm font-mono text-gray-400 text-center mt-2">
           {props?.alt ?? ""}
@@ -78,6 +82,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </blockquote>
     ),
-    ...components,
-  };
-}
+    ProImage: (props) => (
+      <ProImage {...props} />
+    )
+};
