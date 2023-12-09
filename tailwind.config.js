@@ -5,6 +5,7 @@ module.exports = {
   content: [
     "./mdx-components.tsx",
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
+    "./app/api/og/route.tsx",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/react-icons/lib/esm/*.{js,jsx,ts,tsx}",

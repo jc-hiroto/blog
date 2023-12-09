@@ -15,12 +15,14 @@ export const metadata: Metadata = {
   keywords: ["jc-hiroto", "blog", "software engineering", "photography"],
   creator: "jc-hiroto",
   authors: [{ name: "jc-hiroto", url: "https://jchiroto.dev/" }],
+  metadataBase: new URL("https://blog.jchiroto.dev/"),
   openGraph: {
     title: "Blog by jc-hiroto",
     description: "A blog by jc-hiroto. Mostly about Software Engineering and Photography.",
     url: "https://blog.jchiroto.dev/",
     locale: "en_US",
     type: "website",
+    images: ["https://blog.jchiroto.dev/api/og"],
   },
 }
 

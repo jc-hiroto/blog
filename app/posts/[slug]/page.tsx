@@ -54,17 +54,19 @@ async function getPost({ slug }: Params): Promise<Post<PostMetadata>> {
 
 export async function generateMetadata( { params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const { frontmatter } = await getPost(params);
+  const ogImage = `https://blog.jchiroto.dev/api/og?title=${encodeURIComponent(frontmatter.title)}&description=${encodeURIComponent(frontmatter.description)}&cover=${encodeURIComponent(frontmatter.cover)}&slug=${encodeURIComponent(params.slug)}`
   return {
     title: frontmatter.title,
     description: frontmatter.description,
     openGraph: {
-      title: frontmatter.title,
+      title: `${frontmatter.title} | Blog by jc-hiroto`,
       description: frontmatter.description,
       url: `https://blog.jchiroto.dev/posts/${params.slug}`,
       locale: frontmatter.language === "en" ? "en_US" : "zh_TW",
       type: "article",
       publishedTime: frontmatter.date.toISOString(),
       authors: ["jc-hiroto"],
+      images: [ogImage],
     },
   }
 
