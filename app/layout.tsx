@@ -3,7 +3,26 @@ import "globals.css";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { SP } from "next/dist/shared/lib/utils";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Blog by jc-hiroto",
+    default: "Blog by jc-hiroto",
+  },
+  description: "A blog by jc-hiroto. Mostly about Software Engineering and Photography.",
+  generator: "Next.js",
+  keywords: ["jc-hiroto", "blog", "software engineering", "photography"],
+  creator: "jc-hiroto",
+  authors: [{ name: "jc-hiroto", url: "https://jchiroto.dev/" }],
+  openGraph: {
+    title: "Blog by jc-hiroto",
+    description: "A blog by jc-hiroto. Mostly about Software Engineering and Photography.",
+    url: "https://blog.jchiroto.dev/",
+    locale: "en_US",
+    type: "website",
+  },
+}
 
 export default function RootLayout({
   children,
