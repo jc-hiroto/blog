@@ -12,9 +12,7 @@ export async function GET(req: Request) {
   const description = hasDescription ? searchParams.get('description') : 'A blog by jc-hiroto. Mostly about Software Engineering and Photography.'
   const slug = searchParams.get('slug')
   const cover = searchParams.get('cover')
-  const avatar = await fetch(new URL("/public/img/jc-avatar.png", import.meta.url)).then(
-    (res) => res.arrayBuffer(),
-  );
+  const avatarUrl = "https://blog.jchiroto.dev/_next/image?url=%2Fimg%2Fjc-avatar.png&w=256&q=75"
   const monoRegular = await fetch(new URL("/assets/mono-regular.ttf", import.meta.url)).then(
     (res) => res.arrayBuffer(),
   );
@@ -41,11 +39,11 @@ export async function GET(req: Request) {
         >
           <img src={coverUrl} style={{objectFit: "cover"}} tw="w-full h-80"/>
           <div tw="w-full flex flex-row justify-start px-1">
-            <img src={avatar as any} width={300} height={300} tw="ml-10"/>
-            <div tw="flex flex-col h-full justify-center ml-16 self-center">
+            <img src={avatarUrl as any} width={300} height={300} tw="ml-10"/>
+            <div style={{lineHeight: 1}} tw="flex flex-col h-full justify-center ml-16 self-center">
               <p style={{ fontFamily: "mono-semibold"}} tw="text-7xl text-gray-300">{"> "}{title}</p>
               <p tw="w-180 text-3xl text-gray-300 mt-2">{description}</p>
-              <p tw="w-180 text-2xl text-gray-500 -mt-2">blog.jchiroto.dev/posts/{slug}</p>
+              <p tw="w-180 text-3xl text-gray-500 -mt-0">blog.jchiroto.dev/posts/{slug}</p>
             </div>
           </div>
         </div>
@@ -77,12 +75,12 @@ export async function GET(req: Request) {
           }}
       >
         <div tw="flex w-full h-8 bg-gray-100"></div>
-        <p style={{ fontFamily: "mono-semibold"}} tw="mx-auto mt-20 text-center text-7xl text-gray-300">{"> "}{title}</p>
+        <p style={{ fontFamily: "mono-semibold"}} tw="mx-auto mt-20 text-center text-8xl text-gray-300">{"> "}{title}</p>
         <div tw="w-full flex flex-row justify-center align-center px-2">
-          <img src={avatar as any} width={400} height={400} />
+          <img src={avatarUrl as any} width={400} height={400} />
           <div tw="flex flex-col justify-center align-center ml-16">
-            <p tw="w-160 text-3xl text-gray-400 mt-16">{description}</p>
-            <p tw="w-160 text-3xl text-gray-200">blog.jchiroto.dev</p>
+            <p tw="w-160 text-4xl text-gray-400 mt-16">{description}</p>
+            <p tw="w-160 text-5xl text-gray-200">blog.jchiroto.dev</p>
           </div>
         </div>
       </div>

@@ -22,7 +22,14 @@ export const metadata: Metadata = {
     url: "https://blog.jchiroto.dev/",
     locale: "en_US",
     type: "website",
-    images: ["https://blog.jchiroto.dev/api/og"],
+    images: [
+      {
+        url: "https://blog.jchiroto.dev/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Blog by jc-hiroto",
+      }
+    ],
   },
 }
 
