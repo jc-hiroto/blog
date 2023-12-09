@@ -1,3 +1,0 @@
-[submodule "app/posts"]
-	path = app/posts
-	url = https://github.com/jc-hiroto/blog-posts.git
