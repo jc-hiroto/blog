@@ -8,7 +8,7 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
     <div className=" flex flex-col justify-center items-start mt-2 sm:mt-10">
       <div className="w-full h-[30rem] relative">
         <Image
-          src={path.join("/img", metadata.cover, "cover.png")}
+          src={path.join("/img", metadata.cover)}
           className="w-full h-full object-cover unselectable"
           alt="cover"
           width={0}

@@ -2,6 +2,8 @@ import { Providers } from "app/providers";
 import "globals.css";
 import Header from "components/Header";
 import Footer from "components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SP } from "next/dist/shared/lib/utils";
 
 export default function RootLayout({
   children,
@@ -14,6 +16,7 @@ export default function RootLayout({
         <Providers>
           <Header />
             {children}
+            <SpeedInsights />
           <Footer />
         </Providers>
       </body>
