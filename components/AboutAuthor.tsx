@@ -15,7 +15,7 @@ function AboutAuthor() {
         </p>
         <hr className="sm:w-[15%] border-gray-700" />
       </div>
-      <div className="sm:max-w-[60%] flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-x-6">
+      <div className="sm:max-w-[80%] xl:max-w-[60%] flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-x-6">
         <Image
           src="/img/jc-avatar.png"
           width="100"

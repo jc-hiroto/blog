@@ -1,6 +1,5 @@
 import { PostMetadata } from "types/metadata";
 import Image from "next/image";
-import { calcReadingTime } from "utils";
 import path from "path";
 
 function PostIntro({ metadata }: { metadata: PostMetadata }) {
@@ -33,9 +32,6 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
       <div className="w-full flex flex-row justify-between items-center mt-4 flex-wrap">
         <p className="w-full md:w-fit sm: text-md md:text-lg lg:text-xl font-mono text-gray-400">
           {metadata.description}
-        </p>
-        <p className="text-sm sm:text-sm font-mono text-gray-500 mt-2 sm:mt-1">
-          costs you {calcReadingTime(metadata.words, metadata.language)} min(s)
         </p>
       </div>
       <hr className="w-[100%] mx-auto border-gray-700 my-10" />
