@@ -41,3 +41,13 @@ ol ol ol {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+.blink {
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

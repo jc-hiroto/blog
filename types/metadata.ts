@@ -15,6 +15,12 @@ export type PostMetadata = {
   description: string;
   prefix: string;
   language: string;
+  published: boolean;
+};
+
+export type PostData = {
+  slug: string;
+  metadata: PostMetadata;
 };
 
 export interface ProImageMetadata {
