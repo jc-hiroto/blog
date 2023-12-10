@@ -1,6 +1,5 @@
 import { PostLanguage } from "types/metadata";
 
-
 function getWpm(lang: string) {
   const wpm = {
     en: 228,

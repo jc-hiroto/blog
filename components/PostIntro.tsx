@@ -35,8 +35,7 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
           {metadata.description}
         </p>
         <p className="text-sm sm:text-sm font-mono text-gray-500 mt-2 sm:mt-1">
-          costs you {" "}
-          {calcReadingTime(metadata.words, metadata.language)} min(s)
+          costs you {calcReadingTime(metadata.words, metadata.language)} min(s)
         </p>
       </div>
       <hr className="w-[100%] mx-auto border-gray-700 my-10" />

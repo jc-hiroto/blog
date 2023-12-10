@@ -15,7 +15,7 @@ export type PostMetadata = {
   description: string;
   prefix: string;
   language: string;
-}
+};
 
 export interface ProImageMetadata {
   path: string;
@@ -29,13 +29,13 @@ export interface ProImageMetadata {
 }
 
 export const Cameras = {
-  "S_A72": "Sony A7II",
-  "H_500CM": "Hasselblad 500C/M",
-  "N_F3": "Nikon F3HP",
-  "GP6B": "GoPro Hero 6 Black",
-  "IP13P": "iPhone 13 Pro",
-  "O_MJU2": "Olympus mju-II",
-}
+  S_A72: "Sony A7II",
+  H_500CM: "Hasselblad 500C/M",
+  N_F3: "Nikon F3HP",
+  GP6B: "GoPro Hero 6 Black",
+  IP13P: "iPhone 13 Pro",
+  O_MJU2: "Olympus mju-II",
+};
 
 export enum Lens {
   H_80 = "Hasselblad 80mm f/2.8",
@@ -54,5 +54,5 @@ export enum Film {
   K_PT400 = "Kodak Portra 400",
   K_PT160 = "Kodak Portra 160",
   I_HP5 = "Ilford HP5 Plus",
-  I_DELTA400 = "Ilford Delta 400"
+  I_DELTA400 = "Ilford Delta 400",
 }
