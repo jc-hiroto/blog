@@ -29,7 +29,9 @@ function ProImage({
       </div>
       <div className="sm:w-[30%] h-auto sm:mx-[5%] mx-2 flex flex-col sm:py-4 pt-4 sm:justify-between">
         <div className="flex flex-col space-y-0.5 sm:text-lg text-sm text-gray-400">
-          <p className="font-bold sm:text-2xl text-lg text-gray-200 mb-4">{title}</p>
+          <p className="font-bold sm:text-2xl text-lg text-gray-200 mb-4">
+            {title}
+          </p>
           {desc_zh && <p>{desc_zh}</p>}
           {desc_en && <p>{desc_en}</p>}
         </div>

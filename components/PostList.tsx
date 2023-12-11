@@ -1,7 +1,13 @@
 import path from "path";
 import { PostData } from "types/metadata";
 
-export function PostList({ posts, prefix }: { posts: PostData[]; prefix: string; }) {
+export function PostList({
+  posts,
+  prefix,
+}: {
+  posts: PostData[];
+  prefix: string;
+}) {
   return (
     <div className="w-full px-8 py-4 flex flex-col items-start justify-start">
       <div className="w-full flex flex-row items-center justify-start mb-4">
