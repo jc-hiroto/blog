@@ -16,7 +16,7 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
         />
       </div>
       <div className="w-full flex flex-row justify-between items-center mt-8 flex-wrap">
-        <p className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-mono text-gray-100">
+        <p className="text-4xl sm:text-4xl md:text-5xl xl:text-6xl font-bold font-mono text-gray-100">
           {`/${metadata.prefix}﹥`}
           {metadata.title}
         </p>
