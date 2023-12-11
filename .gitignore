@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# images
+/public/img/aqua-ocean-harbor
+/public/img/foto-highway1
+/public/img/hello-world
+/public/img/sde-bq
+/public/img/story-of-neo
