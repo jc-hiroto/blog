@@ -7,7 +7,7 @@ function AboutAuthor() {
   const about_en =
     "A Taiwanese software engineer in the Bay Area. I love writing random code and film photography. This blog is mainly about software engineering and my photography works.";
   return (
-    <div className="flex flex-col mt-40 mb-10 items-center">
+    <div className="flex flex-col mt-20 mb-10 items-center">
       <div className="w-full flex flex-row justify-center items-center mb-4">
         <hr className="sm:w-[15%] border-gray-700" />
         <p className="text-lg font-mono text-gray-500 mx-4">

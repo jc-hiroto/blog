@@ -11,6 +11,7 @@ import { PostMetadata } from "types/metadata";
 import { MdxContent } from "components/mdx-content";
 import PostIntro from "components/PostIntro";
 import AboutAuthor from "components/AboutAuthor";
+import CopyrightFooter from "components/CopyrightFooter";
 
 type Post<TFrontmatter> = {
   serialized: MDXRemoteSerializeResult;
@@ -91,9 +92,10 @@ export default async function Post({ params }: Props) {
   const { serialized, frontmatter } = await getPost(params);
   return (
     <article className="w-full min-h-screen flex flex-col items-center bg-black text-white">
-      <div className="w-[80%] min-h-[90vh] pt-4">
+      <div className="w-[85%] sm:w-[80%] xl:w-[70%] min-h-[90vh] pt-4">
         <PostIntro metadata={frontmatter} />
         <MdxContent source={serialized} />
+        <CopyrightFooter />
         <AboutAuthor />
       </div>
     </article>

@@ -2,7 +2,7 @@ import { Button, Link } from "@nextui-org/react";
 import { FiGitBranch, FiGithub } from "react-icons/fi";
 
 function Footer() {
-  const version = "alpha 20231119";
+  const version = "alpha 20231227";
   return (
     <div className="w-full h-[64px] px-8 flex flex-row justify-between content-center font-mono flex-wrap">
       <p className="text-xs text-gray-500">
