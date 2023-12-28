@@ -1,5 +1,9 @@
+import { useState } from "react";
 import Image from "next/image";
+import { Tooltip } from "@nextui-org/react";
+import { MdOutlineSatelliteAlt } from "react-icons/md";
 import { ProImageMetadata } from "types/metadata";
+import { getGMapLink } from "utils/location";
 
 function ProImage({
   path,
@@ -10,7 +14,11 @@ function ProImage({
   camera,
   lens,
   film,
+  lat,
+  lng,
+  loc,
 }: ProImageMetadata) {
+  const [locHover, setLocHover] = useState(false);
   return (
     <div
       className={`h-full flex ${
@@ -28,12 +36,24 @@ function ProImage({
         />
       </div>
       <div className="sm:w-[30%] h-auto sm:mx-[5%] mx-2 flex flex-col sm:py-4 pt-4 sm:justify-between">
-        <div className="flex flex-col space-y-0.5 sm:text-lg text-sm text-gray-400">
+        <div className="flex flex-col sm:text-lg text-sm text-gray-400">
           <p className="font-bold sm:text-2xl text-lg text-gray-200 mb-4">
             {title}
           </p>
-          {desc_zh && <p>{desc_zh}</p>}
-          {desc_en && <p>{desc_en}</p>}
+          {desc_zh && <p className="my-0.5">{desc_zh}</p>}
+          {desc_en && <p className="my-0.5">{desc_en}</p>}
+          {lat && lng && (
+            <a
+                className="flex flex-row items-center sm:text-md text-xs font-mono text-gray-500 mt-4 hover:underline cursor-pointer"
+                href={getGMapLink(lat, lng)}
+                target="_blank"
+              >
+                <MdOutlineSatelliteAlt className="sm:text-lg text-md mr-2" />
+                <Tooltip content="Link to Google Map" color="foreground" placement="bottom">
+                  <p>{`${lat.toFixed(5)}, ${lng.toFixed(5)}`}</p>
+                </Tooltip>
+              </a>
+          )}
         </div>
         <div className="flex flex-row sm:space-x-4 pt-4">
           <div className="border-l-1 border-gray-500 h-full sm:flex hidden" />

@@ -32,10 +32,13 @@ export interface ProImageMetadata {
   camera: string;
   lens?: string;
   film?: string;
+  lat?: number;
+  lng?: number;
+  loc?: string;
 }
 
 export const Cameras = {
-  S_A72: "Sony A7II",
+  S_A72: "Sony A7 II",
   H_500CM: "Hasselblad 500C/M",
   N_F3: "Nikon F3HP",
   GP6B: "GoPro Hero 6 Black",
