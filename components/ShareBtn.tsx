@@ -46,7 +46,7 @@ function ShareBtn({ title, text, url }: { title: string, text: string, url?: str
         <FiCheck />:
         <FiLink />
       }
-      <p className="ml-2 font-mono text-md">{shareable ? "Share": shared ? "Copied":"Copy"}</p>
+      <p className="ml-2 font-mono text-md">{shareable ? "Share": shared ? "Copied":"Link"}</p>
     </button>
   )
 }
