@@ -5,6 +5,7 @@ import { type MDXRemoteSerializeResult } from "next-mdx-remote";
 import remarkUnwrapImages from "remark-unwrap-images";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 import type { Metadata, ResolvingMetadata } from "next";
 
 import { PostMetadata } from "types/metadata";
@@ -42,7 +43,7 @@ async function getPost({ slug }: Params): Promise<Post<PostMetadata>> {
     parseFrontmatter: true,
     mdxOptions: {
       remarkPlugins: [remarkUnwrapImages, remarkGfm],
-      rehypePlugins: [rehypeHighlight] as any,
+      rehypePlugins: [rehypeHighlight, rehypeSlug] as any,
     },
   });
   const frontmatter = serialized.frontmatter as PostMetadata;
@@ -92,7 +93,7 @@ export default async function Post({ params }: Props) {
   const { serialized, frontmatter } = await getPost(params);
   return (
     <article className="w-full min-h-screen flex flex-col items-center bg-black text-white">
-      <div className="w-[85%] sm:w-[80%] xl:w-[70%] min-h-[90vh] pt-4">
+      <div className="w-[85%] sm:w-[80%] xl:w-[65%] min-h-[90vh] pt-4">
         <PostIntro metadata={frontmatter} />
         <MdxContent source={serialized} />
         <CopyrightFooter />
