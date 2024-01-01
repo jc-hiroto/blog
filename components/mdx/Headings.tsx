@@ -41,8 +41,10 @@ export function H1({ id, ...props }: HeadingProps) {
 export function H2({ id, ...props }: HeadingProps) {
   const [isCopied, setIsCopied] = useState(false);
   return (
-    <div className="flex flex-row justify-start items-center mt-6 mb-3 group cursor-pointer"
-    onClick={() => copyHeadingLink(id, setIsCopied)}>
+    <div
+      className="flex flex-row justify-start items-center mt-6 mb-3 group cursor-pointer"
+      onClick={() => copyHeadingLink(id, setIsCopied)}
+    >
       <p className="text-gray-800 hidden sm:block sm:text-xl sm:mr-4 sm:-ml-[36px] group-hover:text-gray-300 transition-all duration-300">
         <FiLink className={`${isCopied ? "hidden" : ""}`} />
         <FiCheck className={`${!isCopied ? "hidden" : ""}`} />

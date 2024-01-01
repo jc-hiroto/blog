@@ -34,7 +34,7 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
         <p className="w-full md:w-fit sm: text-md md:text-lg lg:text-xl font-mono text-gray-400">
           {metadata.description}
         </p>
-        <ShareBtn title={`${metadata.title} | Blog by jc-hiroto`} text={""}/>
+        <ShareBtn title={`${metadata.title} | Blog by jc-hiroto`} text={""} />
       </div>
       <hr className="w-[100%] mx-auto border-gray-700 my-5 sm:my-10" />
     </div>
