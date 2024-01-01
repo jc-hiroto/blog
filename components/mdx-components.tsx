@@ -71,6 +71,6 @@ export const mdxComponents: MDXComponents = {
   ),
   ProImage: (props) => <ProImage {...props} />,
   Copyright: (props) => <CopyrightFooter {...props} />,
-  DevEndMark: () => <FaTerminal className="text-gray-500 my-4" />,
-  FotoEndMark: () => <BsStars className="text-gray-500 my-4 text-lg" />,
+  DevEndMark: () => <FaTerminal className="text-gray-200 ml-2 inline" />,
+  FotoEndMark: () => <BsStars className="text-gray-200 ml-2 text-lg inline" />,
 };
