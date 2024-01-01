@@ -47,6 +47,7 @@ async function getPost({ slug }: Params): Promise<Post<PostMetadata>> {
     },
   });
   const frontmatter = serialized.frontmatter as PostMetadata;
+  frontmatter.slug = slug;
   frontmatter.date = new Date(frontmatter.date);
   return {
     frontmatter,

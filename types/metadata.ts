@@ -16,6 +16,7 @@ export type PostMetadata = {
   prefix: string;
   language: string;
   published: boolean;
+  slug: string;
 };
 
 export type PostData = {

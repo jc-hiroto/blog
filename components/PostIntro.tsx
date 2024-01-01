@@ -1,6 +1,7 @@
 import { PostMetadata } from "types/metadata";
 import Image from "next/image";
 import path from "path";
+import ShareBtn from "./ShareBtn";
 
 function PostIntro({ metadata }: { metadata: PostMetadata }) {
   return (
@@ -29,12 +30,13 @@ function PostIntro({ metadata }: { metadata: PostMetadata }) {
           </p>
         </div>
       </div>
-      <div className="w-full flex flex-row justify-between items-center mt-4 flex-wrap">
+      <div className="w-full flex flex-row justify-between items-center mt-4 flex-wrap space-y-4 sm:space-y-0">
         <p className="w-full md:w-fit sm: text-md md:text-lg lg:text-xl font-mono text-gray-400">
           {metadata.description}
         </p>
+        <ShareBtn title={`${metadata.title} | Blog by jc-hiroto`} text={""}/>
       </div>
-      <hr className="w-[100%] mx-auto border-gray-700 my-10" />
+      <hr className="w-[100%] mx-auto border-gray-700 my-5 sm:my-10" />
     </div>
   );
 }
