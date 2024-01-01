@@ -44,15 +44,19 @@ function ProImage({
           {desc_en && <p className="my-0.5">{desc_en}</p>}
           {lat && lng && (
             <a
-                className="flex flex-row items-center sm:text-md text-xs font-mono text-gray-500 mt-4 hover:underline cursor-pointer"
-                href={getGMapLink(lat, lng)}
-                target="_blank"
+              className="flex flex-row items-center sm:text-md text-xs font-mono text-gray-500 mt-4 hover:underline cursor-pointer"
+              href={getGMapLink(lat, lng)}
+              target="_blank"
+            >
+              <MdOutlineSatelliteAlt className="sm:text-lg text-md mr-2" />
+              <Tooltip
+                content="Link to Google Map"
+                color="foreground"
+                placement="bottom"
               >
-                <MdOutlineSatelliteAlt className="sm:text-lg text-md mr-2" />
-                <Tooltip content="Link to Google Map" color="foreground" placement="bottom">
-                  <p>{`${lat.toFixed(5)}, ${lng.toFixed(5)}`}</p>
-                </Tooltip>
-              </a>
+                <p>{`${lat.toFixed(5)}, ${lng.toFixed(5)}`}</p>
+              </Tooltip>
+            </a>
           )}
         </div>
         <div className="flex flex-row sm:space-x-4 pt-4">
