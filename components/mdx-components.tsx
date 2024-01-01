@@ -5,55 +5,16 @@ import Image from "next/image";
 import ProImage from "components/ProImage";
 import CopyrightFooter from "./CopyrightFooter";
 import { FaTerminal } from "react-icons/fa";
-import { FiLink } from "react-icons/fi";
+import { BsStars } from "react-icons/bs";
+import { H1, H2, H3, H4, H5, H6 } from "./mdx/Headings";
 
 export const mdxComponents: MDXComponents = {
-  h1: ({ id, ...props }) => (
-    <div className="flex flex-row justify-start items-center mt-12 mb-4 group">
-      <FiLink className="text-gray-800 text-xl mr-4 -ml-[36px] group-hover:text-gray-300 transition-all duration-300" />
-      <h1
-        id={id}
-        className="sm:text-5xl text-4xl font-bold text-gray-100"
-        {...props}
-      />
-      <hr className="ml-6 border-gray-700 flex-grow" />
-    </div>
-  ),
-  h2: ({ id, ...props }) => (
-    <div className="flex flex-row justify-start items-center mt-6 mb-3 group">
-      <FiLink className="text-gray-800 text-xl mr-4 -ml-[36px] group-hover:text-gray-300 transition-all duration-300" />
-      <h2
-        id={id}
-        className="sm:text-4xl text-3xl font-bold text-gray-100"
-        {...props}
-      />
-      <hr className="ml-6 border-gray-800 flex-grow" />
-    </div>
-  ),
-  h3: ({ id, ...props }) => (
-    <h3
-      id={id}
-      className="text-3xl font-bold text-gray-100 mt-4 mb-2"
-      {...props}
-    />
-  ),
-  h4: ({ id, ...props }) => (
-    <h4
-      id={id}
-      className="text-2xl font-bold text-gray-100 mt-2 mb-1"
-      {...props}
-    />
-  ),
-  h5: ({ id, ...props }) => (
-    <h5
-      id={id}
-      className="text-xl font-bold text-gray-100 mt-2 mb-1"
-      {...props}
-    />
-  ),
-  h6: ({ id, ...props }) => (
-    <h6 id={id} className="text-lg font-bold text-white mt-2 mb-1" {...props} />
-  ),
+  h1: ({ id, ...props }) => <H1 id={id as string} {...props} />,
+  h2: ({ id, ...props }) => <H2 id={id as string} {...props} />,
+  h3: ({ id, ...props }) => <H3 id={id as string} {...props} />,
+  h4: ({ id, ...props }) => <H4 id={id as string} {...props} />,
+  h5: ({ id, ...props }) => <H5 id={id as string} {...props} />,
+  h6: ({ id, ...props }) => <H6 id={id as string} {...props} />,
   p: ({ children }) => (
     <p className="text-md sm:text-lg font-normal leading-[1.75] sm:leading-[1.75] mt-4 sm:mt-4">
       {children}
@@ -110,5 +71,6 @@ export const mdxComponents: MDXComponents = {
   ),
   ProImage: (props) => <ProImage {...props} />,
   Copyright: (props) => <CopyrightFooter {...props} />,
-  EndMark: () => <FaTerminal className="text-gray-500 my-2" />,
+  DevEndMark: () => <FaTerminal className="text-gray-500 my-4" />,
+  FotoEndMark: () => <BsStars className="text-gray-500 my-4 text-lg" />,
 };
