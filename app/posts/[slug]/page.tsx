@@ -128,7 +128,7 @@ export default async function Post({ params }: Props) {
           <div className="hidden xl:flex w-[20%] sticky self-start top-[7.5rem] justify-center">
             {headings.length !== 0 && (
               <div className="px-3 max-w-[80%]">
-                <p className="text-md font-mono text-gray-200 -ml-5 mb-2">
+                <p className="text-md font-mono font-semibold text-gray-200 -ml-5 mb-2">
                   {frontmatter.language === "zh_tw"
                     ? "目錄"
                     : "Table of Contents"}
