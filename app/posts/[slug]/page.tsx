@@ -7,16 +7,25 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import type { Metadata, ResolvingMetadata } from "next";
+import Slugger from "github-slugger";
 
 import { PostMetadata } from "types/metadata";
 import { MdxContent } from "components/mdx-content";
 import PostIntro from "components/PostIntro";
 import AboutAuthor from "components/AboutAuthor";
 import CopyrightFooter from "components/CopyrightFooter";
+import Toc from "components/Toc";
+
+export type HeadingsMapEntry = {
+  level: number;
+  title: string;
+  slug: string;
+};
 
 type Post<TFrontmatter> = {
   serialized: MDXRemoteSerializeResult;
   frontmatter: TFrontmatter;
+  headings: HeadingsMapEntry[];
 };
 
 type Params = {
@@ -36,6 +45,24 @@ export async function generateStaticParams() {
 }
 export const dynamicParams = false;
 
+function parseHeadings(raw: string): HeadingsMapEntry[] {
+  // parse # (h1) and ## (h2) headings
+  const slugger = new Slugger();
+  const lines = raw.split("\n").filter((line) => line.match(/^##?\s/));
+  const headings = lines.map((line) => {
+    const match = line.match(/^(#{1,2})\s(.*)/);
+    if (!match) return null;
+    const [, level, title] = match;
+    const slug = slugger.slug(title);
+    return {
+      level: level.length,
+      title,
+      slug,
+    };
+  });
+  return headings as HeadingsMapEntry[];
+}
+
 async function getPost({ slug }: Params): Promise<Post<PostMetadata>> {
   const filepath = path.join("posts", `${slug}.mdx`);
   const raw = await promises.readFile(filepath, "utf-8");
@@ -49,9 +76,11 @@ async function getPost({ slug }: Params): Promise<Post<PostMetadata>> {
   const frontmatter = serialized.frontmatter as PostMetadata;
   frontmatter.slug = slug;
   frontmatter.date = new Date(frontmatter.date);
+  const headings = parseHeadings(raw);
   return {
     frontmatter,
     serialized,
+    headings,
   };
 }
 
@@ -91,15 +120,27 @@ export async function generateMetadata(
 }
 
 export default async function Post({ params }: Props) {
-  const { serialized, frontmatter } = await getPost(params);
+  const { serialized, frontmatter, headings } = await getPost(params);
   return (
-    <article className="w-full min-h-screen flex flex-col items-center bg-black text-white">
-      <div className="w-[85%] sm:w-[80%] xl:w-[65%] min-h-[90vh] pt-4">
-        <PostIntro metadata={frontmatter} />
-        <MdxContent source={serialized} />
-        <CopyrightFooter />
-        <AboutAuthor />
+    <div className="w-full min-h-screen flex flex-col items-center bg-black text-white">
+      <div className="w-full min-h-[90vh] pt-4">
+        <div className="w-full flex flex-row items-start justify-center xl:justify-start">
+          <div className="hidden xl:flex w-[20%] sticky self-start top-[7.5rem] justify-center">
+            {headings.length !== 0 && (<div className="px-3 max-w-[80%]">
+              <p className="text-md font-mono text-gray-200 -ml-5 mb-2">
+                { frontmatter.language === "zh_tw" ? "目錄" : "Table of Contents"}
+              </p>
+              <Toc headings={headings} />
+            </div>)}
+          </div>
+          <article className="w-[85%] sm:w-[80%] xl:w-[60%] xl:mr-[20%] xl:ml-auto">
+            <PostIntro metadata={frontmatter} />
+            <MdxContent source={serialized} />
+            <CopyrightFooter />
+            <AboutAuthor />
+          </article>
+        </div>
       </div>
-    </article>
+    </div>
   );
 }
