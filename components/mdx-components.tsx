@@ -7,6 +7,7 @@ import CopyrightFooter from "./CopyrightFooter";
 import { FaTerminal } from "react-icons/fa";
 import { BsStars } from "react-icons/bs";
 import { H1, H2, H3, H4, H5, H6 } from "./mdx/Headings";
+import AIAssistBadge from "./AIAssistBadge";
 
 export const mdxComponents: MDXComponents = {
   h1: ({ id, ...props }) => <H1 id={id as string} {...props} />,
@@ -71,6 +72,7 @@ export const mdxComponents: MDXComponents = {
   ),
   ProImage: (props) => <ProImage {...props} />,
   Copyright: (props) => <CopyrightFooter {...props} />,
+  AIAssistBadge: (props) => <AIAssistBadge {...props} />,
   DevEndMark: () => <FaTerminal className="text-gray-200 ml-2 inline" />,
   FotoEndMark: () => <BsStars className="text-gray-200 ml-2 text-lg inline" />,
 };
