@@ -126,12 +126,16 @@ export default async function Post({ params }: Props) {
       <div className="w-full min-h-[90vh] pt-4">
         <div className="w-full flex flex-row items-start justify-center xl:justify-start">
           <div className="hidden xl:flex w-[20%] sticky self-start top-[7.5rem] justify-center">
-            {headings.length !== 0 && (<div className="px-3 max-w-[80%]">
-              <p className="text-md font-mono text-gray-200 -ml-5 mb-2">
-                { frontmatter.language === "zh_tw" ? "目錄" : "Table of Contents"}
-              </p>
-              <Toc headings={headings} />
-            </div>)}
+            {headings.length !== 0 && (
+              <div className="px-3 max-w-[80%]">
+                <p className="text-md font-mono text-gray-200 -ml-5 mb-2">
+                  {frontmatter.language === "zh_tw"
+                    ? "目錄"
+                    : "Table of Contents"}
+                </p>
+                <Toc headings={headings} />
+              </div>
+            )}
           </div>
           <article className="w-[85%] sm:w-[80%] xl:w-[60%] xl:mr-[20%] xl:ml-auto">
             <PostIntro metadata={frontmatter} />
