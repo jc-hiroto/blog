@@ -9,13 +9,13 @@ function AboutAuthor() {
   return (
     <div className="flex flex-col mt-20 mb-10 items-center">
       <div className="w-full flex flex-row justify-center items-center mb-4">
-        <hr className="sm:w-[15%] border-gray-700" />
+        <hr className="sm:w-[20%] border-gray-700" />
         <p className="text-lg font-mono text-gray-500 mx-4">
           關於作者 | About Author
         </p>
-        <hr className="sm:w-[15%] border-gray-700" />
+        <hr className="sm:w-[20%] border-gray-700" />
       </div>
-      <div className="sm:max-w-[80%] xl:max-w-[60%] flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-x-6">
+      <div className="sm:max-w-[80%] xl:max-w-[70%] flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-x-6">
         <Image
           src="/img/jc-avatar.png"
           width="100"
