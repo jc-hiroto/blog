@@ -8,6 +8,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import type { Metadata, ResolvingMetadata } from "next";
 import Slugger from "github-slugger";
+import Script from "next/script";
 
 import { PostMetadata } from "types/metadata";
 import { MdxContent } from "components/mdx-content";
@@ -145,6 +146,18 @@ export default async function Post({ params }: Props) {
           </article>
         </div>
       </div>
+      <Script
+        id="mermaid-script"
+        type="module"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
+            mermaid.initialize({startOnLoad: true});
+            mermaid.contentLoaded();
+          `,
+        }}
+      />
     </div>
   );
 }

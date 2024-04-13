@@ -27,6 +27,7 @@ export type PostData = {
 export interface ProImageMetadata {
   path: string;
   title: string;
+  subtitle?: string;
   desc_zh: string;
   desc_en: string;
   reverse?: boolean;

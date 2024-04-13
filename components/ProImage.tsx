@@ -8,6 +8,7 @@ import { getGMapLink } from "utils/location";
 function ProImage({
   path,
   title,
+  subtitle,
   desc_zh,
   desc_en,
   reverse = false,
@@ -18,7 +19,6 @@ function ProImage({
   lng,
   loc,
 }: ProImageMetadata) {
-  const [locHover, setLocHover] = useState(false);
   return (
     <div
       className={`h-full flex ${
@@ -37,9 +37,15 @@ function ProImage({
       </div>
       <div className="sm:w-[30%] h-auto sm:mx-[5%] mx-2 flex flex-col sm:py-4 pt-4 sm:justify-between">
         <div className="flex flex-col sm:text-lg text-sm text-gray-400">
-          <p className="font-bold sm:text-2xl text-lg text-gray-200 mb-4">
-            {title}
-          </p>
+          <div className="flex flex-row items-end mb-4 gap-2 font-bold flex-wrap">
+            <p className="sm:text-2xl text-lg text-gray-200">
+              {title}
+            </p>
+            <p className="sm:text-xl text-md text-gray-300">
+              {subtitle}
+            </p>
+          </div>
+
           {desc_zh && <p className="my-0.5">{desc_zh}</p>}
           {desc_en && <p className="my-0.5">{desc_en}</p>}
           {lat && lng && (

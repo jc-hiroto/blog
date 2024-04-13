@@ -1,6 +1,5 @@
 import type { MDXComponents } from "mdx/types";
 import { Link } from "@nextui-org/react";
-import NextLink from "next/link";
 import Image from "next/image";
 import ProImage from "components/ProImage";
 import CopyrightFooter from "./CopyrightFooter";
@@ -33,7 +32,7 @@ export const mdxComponents: MDXComponents = {
     </ol>
   ),
   code: ({ children }) => (
-    <code className="text-md sm:text-lg font-mono text-gray-400 bg-gray-800 px-1 py-[0.1rem] rounded-md">
+    <code className="text-md sm:text-lg font-mono text-gray-400 bg-gray-900 px-1 py-[0.1rem] rounded-md">
       {children}
     </code>
   ),
