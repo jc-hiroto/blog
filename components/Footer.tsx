@@ -22,7 +22,7 @@ function Footer() {
         </Link>
       </div>
       <div className="flex-grow" />
-      <div className="flex flex-row sm:mr-4 sm:mt-0 mt-2">
+      <div className="flex flex-row sm:mr-4 mr-2 mt-0 text-xs">
         <FiGitBranch className="my-auto mr-1 text-gray-500" />
         <Link className="text-xs text-gray-500" href={`https://github.com/jc-hiroto/blog/commit/${commit}`}>{commit?.slice(0, 7)}</Link>
       </div>
