@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "deploy": "npx wrangler pages deploy out"
+    "deploy": "vercel",
+    "deploy-prod": "vercel --prod"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",

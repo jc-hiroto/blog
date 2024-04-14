@@ -1,8 +1,8 @@
-import { Button, Link } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
 import { FiGitBranch, FiGithub } from "react-icons/fi";
 
 function Footer() {
-  const version = "alpha 20231227";
+  const commit = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA;
   return (
     <div className="w-full h-[64px] px-8 flex flex-row justify-between content-center font-mono flex-wrap">
       <p className="text-xs text-gray-500">
@@ -24,7 +24,7 @@ function Footer() {
       <div className="flex-grow" />
       <div className="flex flex-row sm:mr-4 sm:mt-0 mt-2">
         <FiGitBranch className="my-auto mr-1 text-gray-500" />
-        <p className="text-xs text-gray-500">{version}</p>
+        <Link className="text-xs text-gray-500" href={`https://github.com/jc-hiroto/blog/commit/${commit}`}>{commit?.slice(0, 7)}</Link>
       </div>
       <Link
         className="text-gray-500"
